@@ -127,9 +127,6 @@ function LoadApp() {
         const selection = await bitable.base.getSelection();
         
         if (!selection || !selection.recordId || !selection.fieldId) {
-          setInfo('请选择一个单元格');
-          setAlertType('info');
-          setHtmlContent('');
           return;
         }
 
@@ -140,7 +137,6 @@ function LoadApp() {
         if (fieldMeta.type !== FieldType.Text) {
           setInfo('请选择文本类型的单元格');
           setAlertType('warning');
-          setHtmlContent('');
           return;
         }
 
@@ -151,7 +147,6 @@ function LoadApp() {
         if (!content) {
           setInfo('单元格内容为空');
           setAlertType('warning');
-          setHtmlContent('');
           return;
         }
       // 处理内容格式
